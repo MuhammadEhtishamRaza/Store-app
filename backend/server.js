@@ -15,13 +15,11 @@ app.use(express.json()); // allows us to accept json data in the req.body
 
 app.use("/api/products", productRoutes);
 
-if (process.env.NODE_ENV === "development") {
-  app.use(express.static(path.join(__dirname, "/frontend/dist")));
-  app.get("*", (req, res) => {
-    console.log("Fallback route hit for:", req.url);
-    res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
-  });
-}
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.resolve(__dirname, "frontend", "dist", "index.html"));
+});
 
 // console.log(process.env.MONGO_URI);
 
