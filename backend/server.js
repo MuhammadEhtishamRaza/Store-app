@@ -13,7 +13,12 @@ const PORT = process.env.PORT || 5000;
 // const __dirname = path.resolve();
 
 app.use(express.json()); // allows us to accept json data in the req.body
-app.use(cors());
+app.use(
+  cors({
+    origin: "https://store-app-wine-two.vercel.app",
+    credentials: true,
+  })
+);
 
 app.use("/api/products", productRoutes);
 
