@@ -1,5 +1,9 @@
 import express from "express";
 import {
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
+
   getProducts,
   createProduct,
   updateProduct,

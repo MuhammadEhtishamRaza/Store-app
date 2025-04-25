@@ -29,7 +29,7 @@ const ProductCard = ({ product }) => {
         } else {
             toaster.create({
                 title: "Success",
-                description: "Product Updated Successfully",
+                description: "Product Deleted Successfully",
                 type: "success",
                 duration: 4000,
                 closable: true,

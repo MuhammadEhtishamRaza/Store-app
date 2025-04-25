@@ -1,5 +1,8 @@
 import Product from "../models/product.model.js";
 import mongoose from "mongoose";
+import { createRequire } from 'module';
+
+const require = createRequire(import.meta.url);
 
 export const getProducts = async (req, res) => {
   try {
